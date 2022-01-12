@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --bg-color: #1c1b21;
+}
+body {
+    background-color: var(--bg-color);
+}
+
+.section {
+    width: 100%;
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+@import "blocks/header";
+@import "blocks/video";
+@import "blocks/links";

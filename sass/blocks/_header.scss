@@ -1,0 +1,35 @@
+.header {
+    width: 100%;
+    padding: 0 15px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo {
+    margin-right: 43px;
+}
+
+.header__menu {
+    width: 632px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__menu-item {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+
+    /* white */
+    text-decoration: none;
+    color: #ffffff;
+}
