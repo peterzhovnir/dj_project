@@ -10,7 +10,27 @@
 body {
     background-color: var(--bg-color);
 }
+.main_tittle {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 72px;
+    /* identical to box height */
 
+    /* white */
+
+    color: #ffffff;
+    &::before {
+        display: inline-block;
+        content: " ";
+        background-image: url("/img/tittle_logo.svg");
+        background-size: 64px 31px;
+        height: 31px;
+        width: 64px;
+        margin-right: 30px;
+    }
+}
 .section {
     width: 100%;
     max-width: 1110px;
@@ -19,7 +39,7 @@ body {
 ::-webkit-scrollbar {
     width: 0;
   }
-
+  
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 @import "blocks/header";
@@ -27,3 +47,4 @@ body {
 @import "blocks/links";
 @import "blocks/hero";
 @import "blocks/info";
+@import "blocks/tracks";
