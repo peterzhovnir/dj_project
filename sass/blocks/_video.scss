@@ -48,35 +48,3 @@
 
     // border: 1px solid #ffffff;
 }
-
-.video__playback {
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.video__play {
-    background-color: transparent;
-    border: 0;
-}
-.play_btn:hover {
-    fill: turquoise;
-    color: yellow;
-}
-.video__timeline {
-    height: 2px;
-    background-color: white;
-    width: 80%;
-}
-.video__time {
-    display: block;
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 27px;
-
-    text-align: right;
-
-    color: #ffffff;
-}
