@@ -1,9 +1,102 @@
-.tracks{
+.tracks {
     margin-top: 265px;
     display: flex;
+    justify-content: space-between;
 }
 
-.tracks__img{
-    border: solid rgba($color: #7A66CC, $alpha: 0.6) 20px; 
+.tracks__img {
+    // border: solid rgba($color: #7a66cc, $alpha: 0.6) 20px;
     border-radius: 50%;
+}
+.tracks__img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid rgba($color: #7a66cc, $alpha: 0.9) 20px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 20px rgba(#7a66cc, 0.3);
+}
+.tracks__list {
+    list-style-type: none;
+}
+.tracks__list_item-wrapper {
+    display: flex;
+    margin-top: 20px;
+    // max-width: 540px;\\
+}
+.tracks__item_name {
+    max-width: 505px;
+    white-space: initial;
+
+    // max-width: 500px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+
+    /* white */
+
+    color: #ffffff;
+}
+.list-item_couner {
+    margin-right: 17px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+
+    /* white */
+
+    color: #ffffff;
+
+    opacity: 0.5;
+}
+
+.tracks__social {
+    margin-top: 50px;
+    display: flex;
+}
+.tracks__social_follow {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height */
+
+    /* white */
+
+    color: #ffffff;
+}
+.tracks__social_wrapper {
+    display: flex;
+    margin-left: 40px;
+    flex-wrap: wrap;
+    column-gap: 30px;
+}
+.tracks__social_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social_logo {
+    width: 30px;
+    height: 30px;
+}
+.social_name {
+    padding-left: 10px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+
+    /* white */
+
+    color: #ffffff;
 }
