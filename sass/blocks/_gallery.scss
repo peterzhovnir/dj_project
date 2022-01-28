@@ -1,0 +1,72 @@
+.gallery {
+    margin-top: 180px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+.g_item_1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.g_item_2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.g_item_3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.g_item_4 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.g_item_5 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.gallery__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // img {
+    //     width: 100%;
+    //     height: 100%;
+    // }
+}
+.gallery__item_text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: contain;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height */
+
+    text-align: center;
+
+    /* accent */
+
+    color: #7a66cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba($color: #1c1b21, $alpha: 0.8);
+}

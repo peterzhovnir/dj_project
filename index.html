@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/sass/style.css" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+/>
         <title>Document</title>
     </head>
     <body>
@@ -102,7 +104,7 @@
             </div>
             <img class="info__img" src="/img/info-img.png" alt="">
         </section>
-        <sectio class="section tracks">
+        <section class="section tracks">
             <div class="tracks__img-wrapper">
                 <img class="tracks__img" src="/img/tracks_img.png" alt="">
             </div>
@@ -157,7 +159,71 @@
                     </div>
                 </div>
             </div>
-        </sectio>
-        
+        </section>
+        <section class="section gallery">
+            <div class="gallery__item g_item_1">
+                <img src="/img/gallery/Rectangle_1.png" alt="">
+            </div>
+            <div class="gallery__item g_item_2">
+                <img src="/img/gallery/Rectangle_2.png" alt="">
+            </div>
+            <div class="gallery__item g_item_3">
+                <img src="/img/gallery/Rectangle_3.png" alt="">
+            </div>
+            <div class="gallery__item g_item_4">
+                <img src="/img/gallery/Rectangle_4.png" alt="">
+            </div>
+            <div class="gallery__item g_item_5">
+                <img src="/img/gallery/Rectangle_5.png" alt="">
+                <div class="gallery__item_text">EDC Las Vegas Mainstage</div>
+            </div>
+        </section>
+        <section class="slider">
+            <div class="section swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                      <img class="swiper__item_place_img" src="/img/slider/slider-img_1.png" alt="">
+                      <div class="swiper__item_state">Chandler, AZ</div>
+                      <div class="swiper__item_place">The Park at Wild Horse Pass</div>
+                      <div class="swiper__item-wrapper">
+                          <div class="swiper__item-date">Apr 02 2021</div>
+                          <div class="swiper__item-link">tickets</div>
+                      </div>
+                  </div>
+                  <div class="swiper-slide">
+                      <img class="swiper__item_place_img" src="/img/slider/slider-img_1.png" alt="">
+                      <div class="swiper__item_state">Chandler, AZ</div>
+                      <div class="swiper__item_place">The Park at Wild Horse Pass</div>
+                      <div class="swiper__item-wrapper">
+                          <div class="swiper__item-date">Apr 02 2021</div>
+                          <div class="swiper__item-link">tickets</div>
+                      </div>
+                  </div>
+                  <div class="swiper-slide">
+                      <img class="swiper__item_place_img" src="/img/slider/slider-img_1.png" alt="">
+                      <div class="swiper__item_state">Chandler, AZ</div>
+                      <div class="swiper__item_place">The Park at Wild Horse Pass</div>
+                      <div class="swiper__item-wrapper">
+                          <div class="swiper__item-date">Apr 02 2021</div>
+                          <div class="swiper__item-link">tickets</div>
+                      </div>
+                  </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+              
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+              </div>
+
+        </section>
     </body>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="/script.js"></script>
 </html>
