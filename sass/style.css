@@ -802,6 +802,16 @@ body {
   color: #ffffff;
 }
 
+.footer__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 510px;
+}
+
 .social__link {
   width: 60px;
   height: 60px;
@@ -822,5 +832,21 @@ body {
 .social__link img {
   width: 24px;
   height: 24px;
+}
+
+.footer__copyright {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 19px;
+  /* identical to box height */
+  text-align: center;
+  text-transform: uppercase;
+  /* white */
+  color: #ffffff;
+  opacity: 0.5;
+  margin-top: 100px;
+  margin-bottom: 40px;
 }
 /*# sourceMappingURL=style.css.map */

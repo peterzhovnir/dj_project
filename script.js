@@ -4,10 +4,10 @@ const swiper = new Swiper('.swiper', {
     spaceBetween: 30,
     loop: true,
   
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
+    // // If we need pagination
+    // pagination: {
+    //   el: '.swiper-pagination',
+    // },
   
     // Navigation arrows
     navigation: {
