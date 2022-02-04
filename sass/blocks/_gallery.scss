@@ -70,3 +70,58 @@
     justify-content: center;
     background-color: rgba($color: #1c1b21, $alpha: 0.8);
 }
+
+@media (max-width: 1024px) {
+    .gallery__item img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+    // .gallery {
+    //     margin-top: 180px;
+
+    //     display: grid;
+    //     grid-template-columns: repeat(2, 1fr);
+    //     grid-column-gap: 30px;
+    //     grid-row-gap: 30px;
+    // }
+    // .g_item_1 {
+    //     grid-column-start: 1;
+    //     grid-column-end: 2;
+    //     grid-row-start: 3;
+    //     grid-row-end: 5;
+    // }
+    // .g_item_2 {
+    //     grid-column-start: 1;
+    //     grid-column-end: 2;
+    //     grid-row-start: 1;
+    //     grid-row-end: 2;
+    // }
+    // .g_item_3 {
+    //     grid-column-start: 2;
+    //     grid-column-end: 3;
+    //     grid-row-start: 1;
+    //     grid-row-end: 2;
+    // }
+    // .g_item_4 {
+    //     grid-column-start: 2;
+    //     grid-column-end: 3;
+    //     grid-row-start: 3;
+    //     grid-row-end: 5;
+    // }
+    // .g_item_5 {
+    //     grid-column-start: 1;
+    //     grid-column-end: 3;
+    //     grid-row-start: 2;
+    //     grid-row-end: 3;
+    // }
+    // .gallery__item {
+    //     position: relative;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     // img {
+    //     //     width: 100%;
+    //     //     height: 100%;
+    //     // }
+    // }
+}

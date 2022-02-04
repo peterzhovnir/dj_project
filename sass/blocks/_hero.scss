@@ -67,3 +67,21 @@
 
     color: #ffffff;
 }
+@media (max-width: 1024px) {
+    .hero {
+        // flex-direction: column-reverse;
+    }
+    .hero__descr {
+        padding-right: 20px;
+        padding-left: 5px;
+    }
+    .hero__descr p {
+        margin-top: 43px;
+    }
+    .hero_credits {
+        margin-top: 90px;
+    }
+    .hero__imgs {
+        padding: 36px 0 0 29px;
+    }
+}

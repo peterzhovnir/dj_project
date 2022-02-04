@@ -111,3 +111,16 @@
         width: 60%;
     }
 }
+
+@media (max-width: 1024px) {
+    // .tracks {
+    //     justify-content: space-evenly;
+    // }
+    .tracks__img {
+        min-width: 100%;
+    }
+    .tracks__img-wrapper {
+        margin-left: 20px;
+        width: 40%;
+    }
+}
