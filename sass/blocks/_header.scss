@@ -33,3 +33,8 @@
     text-decoration: none;
     color: #ffffff;
 }
+@media (max-width: 425px) {
+    .header__menu {
+        display: none;
+    }
+}

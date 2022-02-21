@@ -132,6 +132,12 @@ body {
   color: #ffffff;
 }
 
+@media (max-width: 425px) {
+  .header__menu {
+    display: none;
+  }
+}
+
 .video,
 .video__gradient {
   width: 100vw;
@@ -354,6 +360,18 @@ body {
   .hero__imgs {
     padding: 36px 0 0 29px;
   }
+  .hero__imgs img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  .hero {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .info {
@@ -438,6 +456,35 @@ body {
   }
   .info__img {
     left: 47%;
+  }
+}
+
+@media (max-width: 425px) {
+  .info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .info__img {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    padding-bottom: 10%;
+  }
+  .info__wrapper {
+    padding: 5%;
   }
 }
 
@@ -585,6 +632,20 @@ body {
   .tracks__img-wrapper {
     margin-left: 20px;
     width: 40%;
+  }
+}
+
+@media (max-width: 425px) {
+  .tracks {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .tracks__img-wrapper {
+    width: 90%;
+    margin-bottom: 50px;
+    margin-left: 0;
   }
 }
 
@@ -737,6 +798,10 @@ body {
   line-height: 27px;
   /* white */
   color: #ffffff;
+}
+
+.swiper__item_place_img {
+  width: 100%;
 }
 
 .swiper__item-wrapper {
@@ -914,6 +979,16 @@ body {
   opacity: 0.5;
   margin-top: 100px;
   margin-bottom: 40px;
+}
+
+@media (max-width: 425px) {
+  .footer__social {
+    width: 100%;
+  }
+  .contacts_area_1,
+  .contacts_area_2 {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 768px) {

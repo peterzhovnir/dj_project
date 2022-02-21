@@ -124,3 +124,13 @@
         width: 40%;
     }
 }
+@media (max-width: 425px) {
+    .tracks {
+        flex-direction: column;
+    }
+    .tracks__img-wrapper {
+        width: 90%;
+        margin-bottom: 50px;
+        margin-left: 0;
+    }
+}

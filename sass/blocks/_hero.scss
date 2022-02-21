@@ -84,4 +84,12 @@
     .hero__imgs {
         padding: 36px 0 0 29px;
     }
+    .hero__imgs img {
+        max-width: 100%;
+    }
+}
+@media (max-width: 425px) {
+    .hero {
+        flex-direction: column;
+    }
 }

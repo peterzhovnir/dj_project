@@ -77,3 +77,21 @@
         left: 47%;
     }
 }
+@media (max-width: 425px) {
+    .info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .info__img {
+        position: relative;
+        left: 0px;
+        top: 0px;
+        transform: translateX(0);
+        padding-bottom: 10%;
+    }
+    .info__wrapper {
+        padding: 5%;
+    }
+}

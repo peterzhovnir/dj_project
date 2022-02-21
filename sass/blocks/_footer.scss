@@ -74,3 +74,13 @@
     margin-top: 100px;
     margin-bottom: 40px;
 }
+
+@media (max-width: 425px) {
+    .footer__social {
+        width: 100%;
+    }
+    .contacts_area_1,
+    .contacts_area_2 {
+        font-size: 12px;
+    }
+}
