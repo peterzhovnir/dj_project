@@ -48,3 +48,27 @@
 
     // border: 1px solid #ffffff;
 }
+@media(max-width:768px){
+    .video__controls{
+        margin-top: 290px;
+    }    
+    .video__controls p {
+        font-size: 36px;
+    }
+    .video__controls h1{
+        font-size: 75px;
+        line-height: 100px;
+    }
+}
+@media(max-width:425px){
+    .video__controls{
+        margin-top: 325px;
+    }
+    .video__controls p {
+        font-size: 24px;
+    }
+    .video__controls h1{
+        font-size: 50px;
+        line-height: 75px;
+    }
+}
