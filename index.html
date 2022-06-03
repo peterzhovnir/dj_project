@@ -14,6 +14,11 @@
             <a href="#" class="header__logo">
                 <img src="/img/bright-lights_logo.png" alt="" class="header__logo_img" />
             </a>
+            <div id="menuToggle">
+                <input type="checkbox"/>
+                  <span></span>
+                  <span></span>
+                  <span></span>
             <nav class="header__menu">
                 <a href="" class="header__menu-item">About</a>
                 <a href="" class="header__menu-item">News</a>
@@ -22,6 +27,7 @@
                 <a href="" class="header__menu-item">Tours</a>
                 <a href="" class="header__menu-item">Contacts</a>
             </nav>
+        </div>
         </header>
         <section class="video">
             <video autoplay muted loop controls="controls" class="video__media">
@@ -32,7 +38,7 @@
                 <p>New Single</p>
                 <h1>HUMAN SUIT</h1>
                 <div class="player">
-                    <button class="play">
+                    <button class="play" id="video_play_btn">
                         <img class="player__btn" src="/img//play-button.svg" alt="" />
                     </button>
                     <div class="player__timeline"></div>
@@ -267,7 +273,14 @@
             <div class="footer__copyright">
                 ©  2020 DJ bright lights.
             </div>
+            <audio
+            id="MP3"
+                src="AudioTest.ogg"
+                autoplay>
+                Ваш браузер не поддерживает элемент <code>audio</code>.
+                </audio>
         </footer>
+        
     </body>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="/script.js"></script>

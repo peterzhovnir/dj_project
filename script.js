@@ -36,3 +36,20 @@ const swiper = new Swiper('.swiper', {
     //   el: '.swiper-scrollbar',
     // }
   });
+
+let menuCheck = document.getElementById('menuToggle');
+menuCheck.onclick = function()
+{console.log("!!!");
+};
+
+
+// ================VIDEO==================
+ 
+const video_play = document.getElementById("video_play_btn");
+
+const video_source = document.getElementsByClassName("video__media");
+
+
+video_play.onclick = function(){
+  video_source.paused = true;
+};
