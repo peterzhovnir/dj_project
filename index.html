@@ -115,7 +115,11 @@
                     <div class="info__line"></div>
                     <a href="" class="info__link">PopULove.net</a>
                 </div>
-                <img class="info__img" src="/img/info-img.png" alt="">
+                <div class="info__img-wrapper">
+                    <div class="img_inner-div">
+                        <img class="info__img" src="/img/info-img.png" alt="">
+                    </div>
+                </div>
             </div>
         </section>
         <section class="section tracks">
@@ -124,12 +128,19 @@
             </div>
             <div class="tracks__wrapper">
                 <h1 class="main_tittle">Last tracks</h1>
+                <audio id="audio-source" controls >
+                    <source src="audio/LAUD - Музика.mp3">
+                </audio>
                 <div class="player">
-                    <button class="play">
-                        <img class="player__btn" src="/img//play-button.svg" alt="" />
+                    <button id="audio_play_btn" class="play">
+                        <img  class="player__btn" src="/img//play-button.svg" alt="" />
                     </button>
                     <div class="player__timeline"></div>
-                    <span class="player__time">00:22-02:54</span>
+                    <div class="player__time">
+                        <time id="audio-time-elapsed">00:22</time>
+                        <span>-</span>
+                        <time id="audio-duration">02:54</time>
+                    </div>
                 </div>
                 <ol class="tracks__list">
                     <li class="tracks__list_item-wrapper">

@@ -108,3 +108,61 @@ timeline.addEventListener('click', (e) =>{
   const ProgressTime = (e.offsetX/timeline.offsetWidth) * video.duration;
   video.currentTime = ProgressTime;
 });
+
+
+
+// =============AUDIO_PLAYER===============
+//PLAY / PAUSE
+const audio = document.getElementById("audio-source");
+const audioPlayBtn = document.getElementById("audio_play_btn");
+
+function toggleAudioPlayPause() {
+  if(audio.paused){
+    audioPlayBtn.className = "pause";
+    console.log(1);
+    audio.play();
+  } else{
+    audioPlayBtn.className = "play";
+    console.log(2);
+    audio.pause();
+  }
+}
+audioPlayBtn.onclick = function(){
+  toggleAudioPlayPause();
+};
+
+
+//DURATION
+const audioTimeElapsed = document.getElementById("audio-time-elapsed");
+const audioDuration = document.getElementById("audio-duration"); 
+
+function formatAudioTime(timeInSec) {
+  const result = new Date(timeInSec * 1000).toISOString().substr(11, 8);
+
+  return {
+    minutes: result.substr(3, 2),
+    seconds: result.substr(6, 2),
+  };
+};
+
+
+function initializeAudio() {
+  const audioDuration = Math.round(audio.duration);
+  const time = formatTime(audioDuration);
+
+
+  audioDuration.innerText = `${time.minutes}:${time.seconds}`;
+  audioDuration.setAttribute('date-time', `${time.minutes}m ${time.seconds}s`);
+}
+function updateAudioTimeElapsed() {
+  const time = formatTime(Math.round(audio.currentTime));
+  audioTimeElapsed.innerText = `${time.minutes}:${time.seconds}`;
+  audioTimeElapsed.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`)
+}
+
+
+
+
+audio.addEventListener('loadedmetadata', initializeAudio);
+
+audio.addEventListener('timeupdate', updateAudioTimeElapsed);
