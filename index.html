@@ -39,9 +39,10 @@
                 <h1>HUMAN SUIT</h1>
                 <div class="player">
                     <button class="play" id="video_play_btn">
-                        <img class="player__btn" src="/img//play-button.svg" alt="" />
+                        <img  class="player__btn" src="/img//pause-button.svg" alt="pause-icon" />
+                        <img  class="player__btn" src="/img//play-button.svg" alt="play-icon" />
                     </button>
-                    <div class="player__timeline">
+                    <div id="video-timeline" class="player__timeline">
                         <div class="timeline-bar"></div>
                     </div>
                     <div class="player__time">
@@ -128,47 +129,51 @@
             </div>
             <div class="tracks__wrapper">
                 <h1 class="main_tittle">Last tracks</h1>
-                <audio id="audio-source" controls >
-                    <source src="audio/LAUD - Музика.mp3">
+                <audio id="audio-source" controls data-index="0">
+                    <source src="audio/01 BLOOD..mp3">
                 </audio>
                 <div class="player">
                     <button id="audio_play_btn" class="play">
-                        <img  class="player__btn" src="/img//play-button.svg" alt="" />
+                        <img  class="player__btn" src="/img//pause-button.svg" alt="pause-icon" />
+                        <img  class="player__btn" src="/img//play-button.svg" alt="play-icon" />
                     </button>
-                    <div class="player__timeline"></div>
+                    <div id="audio-timeline" class="player__timeline">
+                        <div id="audio-timeline-progress" class="timeline-bar"></div>
+                    </div>
                     <div class="player__time">
                         <time id="audio-time-elapsed">00:22</time>
                         <span>-</span>
                         <time id="audio-duration">02:54</time>
                     </div>
                 </div>
-                <ol class="tracks__list">
-                    <li class="tracks__list_item-wrapper">
-                        <span class="list-item_couner">01</span>
+                <div id="track_list_container"></div>
+                <ol class="track__list">
+                    <!-- <li class="track__list_item-wrapper">
+                        <span class="list-item_counter">01</span>
                         <span class="tracks__item_name">3LAU, Bright Lights — How You Love Me</span>
                     </li>
-                    <li class="tracks__list_item-wrapper">
-                        <span class="list-item_couner">02</span>
+                    <li class="track__list_item-wrapper">
+                        <span class="list-item_counter">02</span>
                         <span class="tracks__item_name">Bright Lights, Kaleena Zanders, Kandy — War For Love
                         </span>
                     </li>
-                    <li class="tracks__list_item-wrapper">
-                        <span class="list-item_couner">03</span>
+                    <li class="track__list_item-wrapper">
+                        <span class="list-item_counter">03</span>
                         <span class="tracks__item_name">Pink Is Punk, Benny Benassi, Bright Lights — Ghost</span>
                     </li>
-                    <li class="tracks__list_item-wrapper">
-                        <span class="list-item_couner">04</span>
+                    <li class="track__list_item-wrapper">
+                        <span class="list-item_counter">04</span>
                         <span class="tracks__item_name">Hardwell, Dyro, Bright Lights — Never Say Goodbye</span>
                     </li>
-                    <li class="tracks__list_item-wrapper">
-                        <span class="list-item_couner">05</span>
+                    <li class="track__list_item-wrapper">
+                        <span class="list-item_counter">05</span>
                         <span class="tracks__item_name">Zeds Dead, Dirtyphonics, Bright Lights — Where Are You Now</span>
                     </li>
-                    <li class="tracks__list_item-wrapper">
-                        <span class="list-item_couner">06</span>
+                    <li class="track__list_item-wrapper">
+                        <span class="list-item_counter">06</span>
                         <span class="tracks__item_name">Zedd, Bright Lights — Follow You Down
                         </span>
-                    </li>
+                    </li> -->
                 </ol>
                 <div class="tracks__social">
                     <div class="tracks__social_follow">Follow me:</div>
@@ -300,5 +305,6 @@
         
     </body>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="/tracks.js"></script>
     <script src="/script.js"></script>
 </html>

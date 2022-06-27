@@ -17,15 +17,17 @@
     border-radius: 50%;
     box-shadow: 0px 0px 0px 20px rgba(#7a66cc, 0.3);
 }
-.tracks__list {
+.track__list {
     margin-top: 50px;
     list-style-type: none;
 }
-.tracks__list_item-wrapper {
+.track__list_item-wrapper {
+    cursor: pointer;
     display: flex;
     margin-top: 20px;
     // max-width: 540px;\\
 }
+
 .tracks__item_name {
     max-width: 505px;
     white-space: initial;
@@ -42,7 +44,7 @@
 
     color: #ffffff;
 }
-.list-item_couner {
+.list-item_counter {
     margin-right: 17px;
     font-family: "Poppins", sans-serif;
     font-style: normal;
@@ -111,6 +113,9 @@
         width: 60%;
     }
 }
+.backlight *{
+    color: rgb(255, 0, 0)
+}
 
 @media (max-width: 1024px) {
     // .tracks {
@@ -133,4 +138,8 @@
         margin-bottom: 50px;
         margin-left: 0;
     }
+}
+
+#audio-source{
+    display: none;
 }

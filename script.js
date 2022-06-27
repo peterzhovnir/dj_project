@@ -47,16 +47,29 @@ menuCheck.onclick = function()
 //PLAY/PAUSE
 const videoPlayBtn = document.getElementById("video_play_btn");
 const video = document.querySelector(".video__media");
-const timeline = document.querySelector(".player__timeline");
+const timeline = document.getElementById('video-timeline');
 const timelineBar = document.querySelector(".timeline-bar");
+
+const vPauseIcon = videoPlayBtn.querySelector("img[alt = 'pause-icon']");
+const vPlayIcon = videoPlayBtn.querySelector("img[alt = 'play-icon']");
+
 
 function togglePlayPause() {
   if(video.paused){
     videoPlayBtn.className = "pause";
+    // toggleAudioPlayPause();
+    audio.pause();
+    playIcon.style.display = "block";
+    pauseIcon.style.display = "none";
+
     video.play();
+    vPlayIcon.style.display = "";
+    vPauseIcon.style.display = "";
   } else{
     videoPlayBtn.className = "play";
     video.pause();
+    vPauseIcon.style.display = "none";
+    vPlayIcon.style.display = "block";
   }
 }
 videoPlayBtn.onclick = function(){
@@ -104,27 +117,93 @@ video.addEventListener('loadedmetadata', initializeVideo);
 video.addEventListener('timeupdate', updateTimeElapsed);
 
 //TIMELINE CLICK
-timeline.addEventListener('click', (e) =>{
-  const ProgressTime = (e.offsetX/timeline.offsetWidth) * video.duration;
-  video.currentTime = ProgressTime;
-});
+// timeline.addEventListener('click', (e) =>{
+//   const ProgressTime = (e.offsetX/timeline.offsetWidth) * video.duration;
+//   video.currentTime = ProgressTime;
+// });
 
 
 
 // =============AUDIO_PLAYER===============
+let isMove = false;
+
+//CREATE TRACKLIST
+
+
+function createTrackItem(index,name,duration){
+  var trackItem = document.createElement('li');
+  trackItem.setAttribute("class", "track__list_item-wrapper");
+  trackItem.setAttribute("id", "ptc-"+index);
+  trackItem.setAttribute("data-index", index);
+
+
+  var trackCounter = document.createElement('span');
+  trackCounter.setAttribute("class", "list-item_counter");
+
+  if(index<10){
+    trackCounter.innerHTML =`0${index+1}`;
+  }else{
+    trackCounter.innerHTML = index;
+  }
+  trackItem.appendChild(trackCounter);
+
+  var trackInfoItem = document.createElement('span');
+    trackInfoItem.setAttribute("class", "tracks__item_name");
+    trackInfoItem.innerHTML = name;
+    trackItem.appendChild(trackInfoItem);
+
+    return trackItem;
+}
+
+function createTrackList() {
+  var trackList = document.createElement('ol');
+  trackList.setAttribute("class", "track__list");
+
+  for (var i = 0; i < listAudio.length; i++) {
+    const trackItem = createTrackItem(i,listAudio[i].name,listAudio[i].duration);
+    trackList.appendChild(trackItem);
+  }
+
+  return trackList;
+}
+
+const list = createTrackList();
+document.getElementById('track_list_container').appendChild(list);
+
+let currentTrackNumber = 0;
+
+
+
+
 //PLAY / PAUSE
+
 const audio = document.getElementById("audio-source");
 const audioPlayBtn = document.getElementById("audio_play_btn");
+
+const pauseIcon = audioPlayBtn.querySelector("img[alt = 'pause-icon']");
+const playIcon = audioPlayBtn.querySelector("img[alt = 'play-icon']");
+
+trackBackLigth(currentTrackNumber);
 
 function toggleAudioPlayPause() {
   if(audio.paused){
     audioPlayBtn.className = "pause";
-    console.log(1);
+    // togglePlayPause();
+    video.pause();
+    vPauseIcon.style.display = "none";
+    vPlayIcon.style.display = "block";
+
     audio.play();
+    playIcon.style.display = "none";
+    pauseIcon.style.display = "block";
+    console.log(currentTrackNumber);
+    trackBackLigth(currentTrackNumber);
   } else{
     audioPlayBtn.className = "play";
-    console.log(2);
     audio.pause();
+    playIcon.style.display = "";
+    pauseIcon.style.display = "";
+    
   }
 }
 audioPlayBtn.onclick = function(){
@@ -132,7 +211,10 @@ audioPlayBtn.onclick = function(){
 };
 
 
+
 //DURATION
+
+
 const audioTimeElapsed = document.getElementById("audio-time-elapsed");
 const audioDuration = document.getElementById("audio-duration"); 
 
@@ -147,8 +229,8 @@ function formatAudioTime(timeInSec) {
 
 
 function initializeAudio() {
-  const audioDuration = Math.round(audio.duration);
-  const time = formatTime(audioDuration);
+  const audioDurationEst = Math.round(audio.duration);
+  const time = formatTime(audioDurationEst);
 
 
   audioDuration.innerText = `${time.minutes}:${time.seconds}`;
@@ -157,7 +239,7 @@ function initializeAudio() {
 function updateAudioTimeElapsed() {
   const time = formatTime(Math.round(audio.currentTime));
   audioTimeElapsed.innerText = `${time.minutes}:${time.seconds}`;
-  audioTimeElapsed.setAttribute('datetime', `${time.minutes}m ${time.seconds}s`)
+  audioTimeElapsed.setAttribute('date-time', `${time.minutes}m ${time.seconds}s`)
 }
 
 
@@ -166,3 +248,138 @@ function updateAudioTimeElapsed() {
 audio.addEventListener('loadedmetadata', initializeAudio);
 
 audio.addEventListener('timeupdate', updateAudioTimeElapsed);
+
+
+//TIMELINE
+const audioTimelineProgress = document.getElementById("audio-timeline-progress");
+audio.addEventListener("timeupdate", function(){
+  let timelinePos = audio.currentTime / audio.duration;
+  audioTimelineProgress.style.width = timelinePos *100 + "%";
+});
+
+
+//TIMELINE CLICK
+const audioTimeline = document.getElementById("audio-timeline");
+
+
+// audioTimeline.addEventListener('click', (e) =>{
+//   const ProgressTime = (e.offsetX/audioTimeline.offsetWidth) * audio.duration;
+//   audio.currentTime = ProgressTime;
+// });
+
+// TIMELINE SCRUB UNIVERSAL
+
+
+function scurb(e,src,srcTimeline) {
+
+  // If we use e.offsetX, we have trouble setting the song time, when the mousemove is running
+  const currentTime = ( (e.clientX - srcTimeline.getBoundingClientRect().left) / srcTimeline.offsetWidth ) * src.duration;
+  src.currentTime = currentTime;
+
+}
+//audio  events
+audioTimeline.addEventListener("pointerdown", (e) => {
+  scurb(e,audio,audioTimeline);
+  isMove = true;
+});
+
+document.addEventListener("pointermove", (e) => {
+  if (isMove) {
+      scurb(e,audio, audioTimeline); 
+      audio.muted = true;
+  }
+});
+
+document.addEventListener("pointerup", () => {
+  isMove = false;
+  audio.muted = false;
+});
+//video events
+
+timeline.addEventListener("pointerdown", (e) => {
+  scurb(e,video,timeline);
+  isMove = true;
+});
+
+document.addEventListener("pointermove", (e) => {
+  if (isMove) {
+      scurb(e,video, timeline); 
+      video.muted = true;
+  }
+});
+
+document.addEventListener("pointerup", () => {
+  isMove = false;
+  video.muted = false;
+});
+
+//TRACK CLICK
+
+
+const trackList = document.querySelector('.track__list');
+
+
+trackList.addEventListener("click", (e)=>{
+  // audio.paused();
+  audio.setAttribute("data-index",`${e.target.parentElement.getAttribute("data-index")}`);
+  //index for autoplay next
+  if(e.target.parentElement.className === 'track__list_item-wrapper'){
+    audio.src = listAudio[`${e.target.parentElement.getAttribute("data-index")}`].src;
+    //  temp.classlist.toggle("backlight");
+      // audio.innerHTML =('<source src="audio/03 YAH..mp3">');
+      // console.log(e.target.parentElement.getAttribute("data-index"));
+    
+      audio.load();
+      // togglePlayPause();
+      video.pause();
+      toggleAudioPlayPause();
+      currentTrackNumber = e.target.parentElement.getAttribute("data-index");
+      trackBackLigth(currentTrackNumber);
+    
+
+    
+  }
+});
+
+//AUTO NEXT
+
+audio.addEventListener("ended",()=>{
+  currentTrackNumber = Number.parseInt(`${audio.getAttribute('data-index')}`);
+  // console.log(trackNumber);
+  // console.log(typeof(trackNumber));
+  currentTrackNumber++;
+
+
+  audio.src = listAudio[`${currentTrackNumber}`].src;
+  // console.log(Number.parseInt(`${audio.getAttribute('data-index')+1}`));
+  audio.load();
+  audio.play();
+  // trackNumber++;
+  audio.setAttribute("data-index",`${currentTrackNumber}`);
+  trackBackLigth(currentTrackNumber-1);
+  trackBackLigth(currentTrackNumber);
+});
+
+
+//TRACKLIST BACKLIGHT
+
+
+function trackBackLigth (currentTrackNumber) {
+  const tracks = Array.from(document.getElementsByClassName('track__list_item-wrapper'));
+  tracks.forEach(element =>{
+    element.classList.remove('backlight');
+  });
+  // console.log(currentTrackNumber);
+  const element = document.getElementById(`ptc-${currentTrackNumber}`);
+  // console.log(element);
+  element.classList.toggle('backlight');
+};
+
+// function trackBackLigth (currentTrackNumber) {
+//   const tracks = document.getElementsByClassName('track__list_item-wrapper');
+
+//   // console.log(currentTrackNumber);
+//   const element = document.getElementById(`ptc-${currentTrackNumber}`);
+//   // console.log(element);
+//   element.classList.toggle('backlight');
+// };
