@@ -39,9 +39,9 @@
     display: flex;
     justify-content: space-between;
     width: 510px;
+    margin-top: 60px;
 }
 .social__link {
-    margin-top: 60px;
     width: 60px;
     height: 60px;
     background: #7a66cc;
@@ -75,9 +75,15 @@
     margin-bottom: 40px;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 520px) {
     .footer__social {
         width: 100%;
+        // justify-content: first baseline  ;
+        flex-wrap: wrap;
+    }
+    .social__link{
+        // flex-shrink: 1;
+        flex-basis: auto;
     }
     .contacts_area_1,
     .contacts_area_2 {

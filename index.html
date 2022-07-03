@@ -124,8 +124,11 @@
             </div>
         </section>
         <section class="section tracks">
-            <div class="tracks__img-wrapper">
-                <img class="tracks__img" src="/img/tracks_img.png" alt="">
+            <div id="canvas-wrapper">
+                <canvas></canvas>
+                <div class="tracks__img-wrapper">
+                    <img class="tracks__img" src="/img/tracks_img.png" alt="">
+                </div>
             </div>
             <div class="tracks__wrapper">
                 <h1 class="main_tittle">Last tracks</h1>
@@ -193,15 +196,19 @@
         <section class="section gallery">
             <div class="gallery__item g_item_1">
                 <img src="/img/gallery/grid (1).jpg" alt="">
+                <div class="gallery__item_text">GQ Interview</div>
             </div>
             <div class="gallery__item g_item_2">
                 <img src="/img/gallery/grid (2).jpg" alt="">
+                <div class="gallery__item_text">Gen Z slang</div>
             </div>
             <div class="gallery__item g_item_3">
                 <img src="/img/gallery/grid (6).jpg" alt="">
+                <div class="gallery__item_text">New Album</div>
             </div>
             <div class="gallery__item g_item_4">
                 <img src="/img/gallery/grid (7).jpg" alt="">
+                <div class="gallery__item_text">Top Rated Video</div>
             </div>
             <div class="gallery__item g_item_5">
                 <img src="/img/gallery/grid (5).jpg" alt="">
@@ -306,5 +313,6 @@
     </body>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="/tracks.js"></script>
+    <script src="/audio-eq-vis.js"></script>
     <script src="/script.js"></script>
 </html>

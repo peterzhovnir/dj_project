@@ -172,8 +172,10 @@ document.getElementById('track_list_container').appendChild(list);
 
 let currentTrackNumber = 0;
 
-
-
+const canvasWrapper = document.getElementById('canvas-wrapper');
+console.log(canvasWrapper);
+console.log(Number.parseInt(canvasWrapper.clientHeight));
+console.log(canvasWrapper.height);
 
 //PLAY / PAUSE
 
@@ -183,10 +185,25 @@ const audioPlayBtn = document.getElementById("audio_play_btn");
 const pauseIcon = audioPlayBtn.querySelector("img[alt = 'pause-icon']");
 const playIcon = audioPlayBtn.querySelector("img[alt = 'play-icon']");
 
+const canvas = document.querySelector('canvas');
+const trackImageWrapper = document.querySelector('.tracks__img-wrapper');
+
 trackBackLigth(currentTrackNumber);
+
+// audio.volume = 0.1;
+
+
+const runEq = createEq(audio, canvas, canvasWrapper);
+
+
+
+requestAnimationFrame(() => {
+  console.log(111);
+});
 
 function toggleAudioPlayPause() {
   if(audio.paused){
+    runEq();
     audioPlayBtn.className = "pause";
     // togglePlayPause();
     video.pause();
@@ -198,11 +215,17 @@ function toggleAudioPlayPause() {
     pauseIcon.style.display = "block";
     console.log(currentTrackNumber);
     trackBackLigth(currentTrackNumber);
+    trackImageWrapper.classList.add('shrink');
+    trackImageWrapper.firstElementChild.classList.add('active-rotate');
+
   } else{
     audioPlayBtn.className = "play";
     audio.pause();
     playIcon.style.display = "";
     pauseIcon.style.display = "";
+    trackImageWrapper.classList.remove('shrink');
+    trackImageWrapper.firstElementChild.classList.remove('active-rotate');
+
     
   }
 }

@@ -41,6 +41,12 @@ body {
     width: 0;
 }
 
+@media (max-width: 768px) {
+    .section {
+        padding: 0 15px 0 15px;
+    }
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 @import "blocks/player";
@@ -54,11 +60,6 @@ body {
 @import "blocks/footer";
 @import "blocks/tracks";
 
-@media (max-width: 768px) {
-    .section {
-        padding: 0 15px 0 15px;
-    }
-}
 // .links, .info, .hero, .tracks, .gallery, .slider, .footer{
 //     display: none;
 // }
