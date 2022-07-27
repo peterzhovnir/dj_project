@@ -1,7 +1,16 @@
+.video{
+    display: none;
+    position: relative;
+    overflow: hidden;
+}
+
 .video, .video__gradient {
     width: 100vw;
-    max-height: 100vh;
     overflow-y: hidden;
+}
+.video{
+    display: none;
+    max-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,6 +24,7 @@
     position: absolute;
     left: 0;
     top: 0;
+    // background: linear-gradient(180deg, rgba(255, 0, 0, 0) 0%, rgba(255, 0, 0, 0) 72%, rgb(255, 0, 0) 97%);
     background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(226,226,227,0) 72%, rgba(28,27,33,1) 97%);
     // background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #1c1b21 92.19%), url(image.png);
     // border: 1px solid #000000;
@@ -23,6 +33,7 @@
 .video__controls {
     padding-top: 14%;
     position: absolute;
+    z-index: 10000;
 }
 .video__controls p {
     font-family: "Poppins", sans-serif;
@@ -37,6 +48,7 @@
     color: #ffffff;
 }
 .video__controls h1 {
+    
     margin-top: 10px;
     font-family: "Poppins", sans-serif;
     font-style: normal;
@@ -49,6 +61,17 @@
     /* white */
 
     // border: 1px solid #ffffff;
+}
+
+@media(min-width:1920px){
+    .video{
+        max-height: 1080px;
+    }
+    .video__media{
+        width: 100vw;
+        
+    }
+
 }
 @media(max-width:768px){
     .video__controls{
@@ -64,7 +87,7 @@
 }
 @media(max-width:425px){
     .video__controls{
-        margin-top: 325px;
+        margin-top: 20px;
     }
     .video__controls p {
         font-size: 24px;

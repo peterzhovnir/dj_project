@@ -69,6 +69,7 @@
     opacity: 0.5;
 }
 .swiper__item-link {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,7 +91,8 @@
     border-radius: 30px 0px;
 }
 
-.swiper__nav_next .swiper__nav_prev {
+.swiper__nav_next, .swiper__nav_prev {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,5 +116,16 @@
 @media (max-width: 768px){
     .slider{
         padding: 0 100px;
+    }
+}
+@media (max-width: 576px){
+    .slider{
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 425px){
+    .slider{
+        margin-top: 100px;
     }
 }

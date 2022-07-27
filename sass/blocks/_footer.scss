@@ -42,6 +42,7 @@
     margin-top: 60px;
 }
 .social__link {
+    cursor: pointer;
     width: 60px;
     height: 60px;
     background: #7a66cc;
@@ -88,5 +89,14 @@
     .contacts_area_1,
     .contacts_area_2 {
         font-size: 12px;
+    }
+}
+
+@media (max-width: 425px){
+    .footer{
+        margin-top: 100px;
+    }
+    .social__link{
+        margin-top: 10px;
     }
 }

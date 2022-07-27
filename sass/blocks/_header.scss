@@ -109,17 +109,16 @@
 #menuToggle > span, input{
   display: none;
 }
-
-@media (max-width: 425px) {
-    .header__logo_img{
-        width:80%;
-    }
-    
-    // .header__menu {
-    //     display: none;
-    // }
+@media (max-width: 1024px){
+  .header__menu{
+    width: 115%;
+  }
 }
+
 @media (max-width: 767px) {
+  .wrapper{
+    // overflow-x: scroll;
+  }
   #menuToggle{
     position: absolute;
     justify-content: unset;
@@ -128,41 +127,53 @@
     display: block;
   }
 
-    .header__logo{
-        margin-right: 0;
-    }
-    .header {
-        justify-content: space-between;
-    }
-    .header__logo{
-        left: 0%;
-        top: 0%;
-    }
-    .header__menu {
-        right: -2px;
-        top: -14px;
-        position: absolute;
-        height: 350px;
-        width: 226px;
-        flex-direction: column;
-        background-color: rgba(122, 102, 204, 0.9);
-        justify-content: space-between;
-        align-items:flex-end;
+  .header__logo{
+      margin-right: 0;
+  }
+  .header {
+    // overflow: hidden;
+    // height: 50vh;
+      justify-content: space-between;
+  }
+  .header__logo{
+      left: 0%;
+      top: 0%;
+  }
+  .header__menu {
+      right: -2px;
+      top: -14px;
+      position: absolute;
+      height: 350px;
+      width: 226px;
+      flex-direction: column;
+      background-color: rgba(122, 102, 204, 0.9);
+      justify-content: space-between;
+      align-items:flex-end;
 
-        -webkit-font-smoothing: antialiased;
-        transform-origin: 0% 0%;
-        transform: translate(130%, 0);
-        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-    }
-    .header__menu-item{
-      margin-right: 15%;
-        padding: 10px 45px;
-        transition-delay: 2s;
-    }
+      -webkit-font-smoothing: antialiased;
+      transform-origin: 0% 0%;
+      transform: translate(130%, 0);
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+  .header__menu-item{
+    margin-right: 15%;
+      padding: 10px 45px;
+      transition-delay: 2s;
+  }
 
 
-    #menuToggle input:checked ~ nav
-    {
-    transform: none;
-    }
+  #menuToggle input:checked ~ nav
+  {
+  transform: none;
+  }
+}
+
+@media (max-width: 425px) {
+  .header__logo_img{
+      width:80%;
+  }
+  
+  // .header__menu {
+  //     display: none;
+  // }
 }

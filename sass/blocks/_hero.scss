@@ -1,6 +1,6 @@
 .hero {
     position: relative;
-    margin-top: 316px;
+    margin-top: 179px;
     display: flex;
     justify-content: space-between;
 }
@@ -115,5 +115,11 @@
     }
     .hero__imgs img {
         max-width: 250px;
+    }
+}
+
+@media (max-width: 425px){
+    .hero{
+        margin-top: 40px;
     }
 }

@@ -59,6 +59,7 @@ canvas{
     border-radius: 50%;
     box-shadow: 0px 0px 0px 20px rgba(#7a66cc, 0.3);
 
+    -webkit-transition: all 0.5s cubic-bezier(0.39, 0.52, 0.78, 1.4);
     transition: all 0.5s cubic-bezier(0.39, 0.52, 0.78, 1.4);
 }
 .tracks__img{
@@ -67,8 +68,10 @@ canvas{
 }
 
 .active-rotate {
-    animation: rotation 25s infinite linear;
     -webkit-animation: rotation 25s infinite linear;
+    -webkit-animation-fill-mode: forwards;
+    
+    animation: rotation 25s infinite linear;
     animation-fill-mode: forwards;
 }
 
@@ -112,6 +115,7 @@ canvas{
 .shrink.tracks__img-wrapper::after{
     opacity: 1;
 
+    -webkit-transition: all 0.5s cubic-bezier(0.39, 0.52, 0.78, 1.4);
     transition: all 0.5s cubic-bezier(0.39, 0.52, 0.78, 1.4);
 }
 
@@ -181,6 +185,7 @@ canvas{
     column-gap: 30px;
 }
 .tracks__social_item {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -228,12 +233,28 @@ canvas{
         // width: 40%;
     }
 }
+
+@media (max-width: 576px){
+    .tracks{
+        flex-direction: column;
+    }
+    .tracks__wrapper{
+        width: 100%;
+        padding: 0 27px 0 27px;
+        margin: 0 0 0 0;
+        margin-top: 288px;
+        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, var(--bg-color) 25%);
+    }
+
+}
+
 @media (max-width: 425px) {
     .tracks {
+        padding: 0 0 0 0;
         flex-direction: column;
     }
     .tracks__img-wrapper {
-        width: 90%;
+        // width: 90%;
         margin-bottom: 50px;
         margin-left: 0;
     }
@@ -246,6 +267,6 @@ canvas{
 
 @media (max-width: 425px){
     .tracks{
-        margin-top: 380px;
+        margin-top: 300px;
     }
 }
