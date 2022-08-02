@@ -1,89 +1,348 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/9.9.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/9.9.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/9.9.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/9.9.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/9.9.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/9.9.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/9.9.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/9.9.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/9.9.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/9.9.1/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+        
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+        <!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+/>
+        <title>Document</title>
+    </head>
+    <body>
+<div class="wrapper">
+    <header class="section header">
+        <a href="#" class="header__logo">
+            <img src="img/bright-lights_logo.png" alt="" class="header__logo_img" />
+        </a>
+        <div id="menuToggle">
+            <input type="checkbox"/>
+              <span></span>
+              <span></span>
+              <span></span>
+        <nav class="header__menu">
+            <a href="#about_link" class="header__menu-item">About</a>
+            <a href="#news_link" class="header__menu-item">News</a>
+            <a href="#tracks_link" class="header__menu-item">Music</a>
+            <a href="#media_link" class="header__menu-item">Media</a>
+            <a href="#tours_link" class="header__menu-item">Tours</a>
+            <a href="#contacts_link" class="header__menu-item">Contacts</a>
+        </nav>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    </header>
+    <section class="video">
+        <video autoplay muted loop class="video__media">
+            <source src="video/gnfld_prsnlsvtmnt.mp4" type="video/mp4" />
+        </video>
+        <div class="video__gradient"></div>
+        <div class="section video__controls">
+            <p>New Single</p>
+            <h1>HUMAN SUIT</h1>
+            <div class="player">
+                <button class="play" id="video_play_btn">
+                    <img  class="player__btn" src="img//pause-button.svg" alt="pause-icon" />
+                    <img  class="player__btn" src="img//play-button.svg" alt="play-icon" />
+                </button>
+                <div id="video-timeline" class="player__timeline">
+                    <div class="timeline-bar"></div>
+                </div>
+                <div class="player__time">
+                    <time id="time-elapsed">00:22</time>
+                    <span>-</span>
+                    <time id="duration">02:54</time>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section links">
+        <a class="links__item">
+            <!-- <img src="img/link-img_1.png" alt="" class="links__img" /> -->
+            <div class="links__descr">
+                <span class="links__descr-text">Working on my upcoming full-lenth
+                    album that`s releasing later this year.</spqn>
+            </div>
+        <a class="links__item">
+            <!-- <img src="img/link-img_2.png" alt="" class="links__img" /> -->
+            <div class="links__descr">
+                <p class="links__descr-text">Halloween vibes. 
+                    Listen my new track!</p>
+            </div>
+        <a class="links__item">
+            <!-- <img src="img/link-img_3.png" alt="" class="links__img" /> -->
+            <div class="links__descr">
+                <span class="links__descr-text">WarForLove is OUT NOW!! 
+                    Stream it here!</span>
+            </div>
+        </a>
+    </section>
+    <section  class="section hero">
+        <div class="hero__descr">
+            <h2 id="#about_link" class="main_tittle">Bright Lights</h2>
+            <p>Bright Lights is a multi-Grammy nominated singer, songwriter, DJ and record producer. She has written for numerous 
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+                pop stars including Britney Spears, Justin Bieber, Usher and Beyoncé. Her catalog has amassed over 1 billion streams worldwide. More than 100 million of those streams can be attributed to her artist career and include such hits as Porter Robinson's "Language," 3LAU's "How You Love Me" and her own single "Runaway." She was also a featured vocalist on Zedd's #1 Clarity album. Her latest music video, "Put It Down," reached 1 million streams in the first week, releasing independently. Bright Lights is currently in the studio working on a self-produced album slated for release in 2020. </p>
+            <div class="hero_credits">
+                <div class="credits__item">
+                    <div class="credits__logo"></div>
+                    <div class="credits__info">Based in: Los Angeles</div>
+                </div>
+                <div class="credits__item">
+                    <div class="credits__logo"></div>
+                    <div class="credits__info">Founded in 2011</div>
+                </div>
+                <div class="credits__item">
+                    <div class="credits__logo"></div>
+                    <div class="credits__info">Genre: #DancePop</div>
+                </div>
+                <div class="credits__item">
+                    <div class="credits__logo"></div>
+                    <div class="credits__info">Label: 333 Recordings</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero__imgs">
+            <img src="img/hero-img_2.png" alt="">
+            <img src="img/hero-img.png" alt="">
+        </div>
+    </section>
+    <section id="news_link" class="section">
+        <div class="info">
+            <div class="info__wrapper">
+                <p class="info__text">
+                    “In an age where mainstream music is designed to be as
+                    easily consumed as possible, listening to Bright Lights is
+                    refreshing, to say the least. Her sound is perfect for radio
+                    but complex enough to separate her from other pop newcomers.”
+                </p>
+                <div class="info__line"></div>
+                <a href="" class="info__link">PopULove.net</a>
+            </div>
+            <div class="info__img-wrapper">
+                <div class="img_inner-div">
+                    <img class="info__img" src="img/info-img.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="tracks_link"class="section tracks">
+        <div id="canvas-wrapper">
+            <canvas></canvas>
+            <div class="tracks__img-wrapper">
+                <img class="tracks__img" src="img/tracks_img.png" alt="">
+            </div>
+        </div>
+        <div class="tracks__wrapper">
+            <h1 class="main_tittle">Last tracks</h1>
+            <audio id="audio-source" controls data-index="0">
+                <source src="audio/01 BLOOD..mp3">
+            </audio>
+            <div class="player">
+                <button id="audio_play_btn" class="play">
+                    <img  class="player__btn" src="img//pause-button.svg" alt="pause-icon" />
+                    <img  class="player__btn" src="img//play-button.svg" alt="play-icon" />
+                </button>
+                <div id="audio-timeline" class="player__timeline">
+                    <div id="audio-timeline-progress" class="timeline-bar"></div>
+                </div>
+                <div class="player__time">
+                    <time id="audio-time-elapsed">00:22</time>
+                    <span>-</span>
+                    <time id="audio-duration">02:54</time>
+                </div>
+            </div>
+            <div id="track_list_container"></div>
+            <!-- <ol class="track__list">
+                <li class="track__list_item-wrapper">
+                    <span class="list-item_counter">01</span>
+                    <span class="tracks__item_name">3LAU, Bright Lights — How You Love Me</span>
+                </li>
+                <li class="track__list_item-wrapper">
+                    <span class="list-item_counter">02</span>
+                    <span class="tracks__item_name">Bright Lights, Kaleena Zanders, Kandy — War For Love
+                    </span>
+                </li>
+                <li class="track__list_item-wrapper">
+                    <span class="list-item_counter">03</span>
+                    <span class="tracks__item_name">Pink Is Punk, Benny Benassi, Bright Lights — Ghost</span>
+                </li>
+                <li class="track__list_item-wrapper">
+                    <span class="list-item_counter">04</span>
+                    <span class="tracks__item_name">Hardwell, Dyro, Bright Lights — Never Say Goodbye</span>
+                </li>
+                <li class="track__list_item-wrapper">
+                    <span class="list-item_counter">05</span>
+                    <span class="tracks__item_name">Zeds Dead, Dirtyphonics, Bright Lights — Where Are You Now</span>
+                </li>
+                <li class="track__list_item-wrapper">
+                    <span class="list-item_counter">06</span>
+                    <span class="tracks__item_name">Zedd, Bright Lights — Follow You Down
+                    </span>
+                </li>
+            </ol> -->
+            <div class="tracks__social">
+                <div class="tracks__social_follow">Follow me:</div>
+                <div class="tracks__social_wrapper">
+                    <div class="tracks__social_item">
+                        <img class="social_logo" src="img/logo/spotify-logo.svg" alt="">
+                        <div class="social_name">Spotify</div>
+                    </div>
+                    <div class="tracks__social_item">
+                        <img class="social_logo" src="img/logo/apple-logo.svg" alt="">
+                        <div class="social_name">Apple</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="media_link" class="section gallery">
+        <div class="gallery__item g_item_1">
+            <img src="img/gallery/grid (1).jpg" alt="">
+            <div class="gallery__item_text">GQ Interview</div>
+        </div>
+        <div class="gallery__item g_item_2">
+            <img src="img/gallery/grid (2).jpg" alt="">
+            <div class="gallery__item_text">Gen Z slang</div>
+        </div>
+        <div class="gallery__item g_item_3">
+            <img src="img/gallery/grid (6).jpg" alt="">
+            <div class="gallery__item_text">New Album</div>
+        </div>
+        <div class="gallery__item g_item_4">
+            <img src="img/gallery/grid (7).jpg" alt="">
+            <div class="gallery__item_text">Top Rated Video</div>
+        </div>
+        <div class="gallery__item g_item_5">
+            <img src="img/gallery/grid (5).jpg" alt="">
+            <div class="gallery__item_text">EDC Las Vegas Mainstage</div>
+        </div>
+    </section>
+    <section id="tours_link" class="section slider">
+        <div class="swiper__nav_prev">
+            <img src="img/slider/prevButton.png" alt="">
+        </div>
+        <div class="section swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                  <img class="swiper__item_place_img" src="img/slider/slider-img_1.png" alt="">
+                  <div class="swiper__item_state">Chandler, AZ</div>
+                  <div class="swiper__item_place">The Park at Wild Horse Pass</div>
+                  <div class="swiper__item-wrapper">
+                      <div class="swiper__item-date">Apr 02 2021</div>
+                      <div class="swiper__item-link">tickets</div>
+                  </div>
+              </div>
+              <div class="swiper-slide">
+                  <img class="swiper__item_place_img" src="img/slider/slider-img_1.png" alt="">
+                  <div class="swiper__item_state">Chandler, AZ</div>
+                  <div class="swiper__item_place">The Park at Wild Horse Pass</div>
+                  <div class="swiper__item-wrapper">
+                      <div class="swiper__item-date">Apr 02 2021</div>
+                      <div class="swiper__item-link">tickets</div>
+                  </div>
+              </div>
+              <div class="swiper-slide">
+                  <img class="swiper__item_place_img" src="img/slider/slider-img_1.png" alt="">
+                  <div class="swiper__item_state">Chandler, AZ</div>
+                  <div class="swiper__item_place">The Park at Wild Horse Pass</div>
+                  <div class="swiper__item-wrapper">
+                      <div class="swiper__item-date">Apr 02 2021</div>
+                      <div class="swiper__item-link">tickets</div>
+                  </div>
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          
+            <!-- If we need navigation buttons -->
+            <!-- <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
+            <!-- If we need scrollbar -->
+            <!-- <div class="swiper-scrollbar"></div> -->
+          </div>
+        <div class="swiper__nav_next"><img src="img/slider/nextButton.png" alt=""></div>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+    </section>
+    <button id="upScrollBtn" onclick="topFunction()" id="myBtn" title="Go to top">Up</button>
+    <footer id="contacts_link" class="section footer">
+        <div class="footer__logo">
+            <img src="img/bright-lights_logo.png" alt="" class="footer__logo_img">
+        </div>
+        <div class="footer__contacts">
+            <div class="contacts_area_1">
+                Artist Management:<br>
+                EMAIL:
+            </div>
+            <div class="contacts_area_2">
+                Jake Henny <br>
+                jake@brightlightsofficial.com
+            </div>
+            
+        </div>
+        <div  class="footer__social">
+            <div class="social__link">
+                <img src="img/logo/apple-logo.svg" alt="">
+            </div>
+            <div class="social__link">
+                <img src="img/logo/spotify-logo.svg" alt="">
+            </div>
+            <div class="social__link">
+                <img src="img/logo/instagram-facebook.svg" alt="">
+            </div>
+            <div class="social__link">
+                <img src="img/logo/youtube-logo.svg" alt="">
+            </div>
+            <div class="social__link">
+                <img src="img/logo/twitter-logo.svg" alt="">
+            </div>
+            <div class="social__link">
+                <img src="img/logo/facebook-3-2.svg" alt="">
+            </div>
+        </div>
+        <div class="footer__copyright">
+            ©  2020 DJ bright lights.
+        </div>
+        <audio
+        id="MP3"
+            src="AudioTest.ogg"
+            autoplay>
+            Ваш браузер не поддерживает элемент <code>audio</code>.
+            </audio>
+    </footer>
+</div>
+        
+    </body>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAHGFqmeo4iH3nfkyZvjzKuFiHGfAGYODY",
+          authDomain: "pt-zhovnir-portfolio-examples.firebaseapp.com",
+          projectId: "pt-zhovnir-portfolio-examples",
+          storageBucket: "pt-zhovnir-portfolio-examples.appspot.com",
+          messagingSenderId: "439313292910",
+          appId: "1:439313292910:web:9e684dcc0614c6f650907f",
+          measurementId: "G-15JW6B91V8"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="js/tracks.js"></script>
+    <script src="js/audio-eq-vis.js"></script>
+    <script src="js/script.js"></script>
 </html>

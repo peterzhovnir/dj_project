@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --bg-color: #1c1b21;
+    --ff-popp-n: "Poppins", sans-serif;
+}
+.wrapper{
+    width: 100vw;
+    position:relative; //that's it
+    overflow:hidden;
+}
+body, html {
+// overflow-x: hidden;
+
+}
+html {
+	scroll-behavior: smooth;
+}
+
+// :target::before {
+//     display: block;    
+//     position: relative;     
+//     top: -100px;
+//     visibility: hidden;
+// }
+body {
+    
+    background-color: var(--bg-color);
+    width: 100%;
+}
+.main_tittle {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 72px;
+    /* identical to box height */
+
+    /* white */
+
+    color: #ffffff;
+    &::before {
+        display: inline-block;
+        content: " ";
+        background-image: url("/img/tittle_logo.svg");
+        background-size: 64px 31px;
+        height: 31px;
+        width: 64px;
+        margin-right: 30px;
+    }
+}
+.section {
+    width: 100%;
+    max-width: 1110px;
+    padding: 0 15px 0 15px;
+    margin: 0 auto;
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+
+#upScrollBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 10%; /* Place the button at the bottom of the page */
+    right: 100px; /* Place the button 30px from the right */
+    z-index: 999; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: rgb(65, 0, 117); /* Set a background color */
+    // color: white; /* Text color */
+    color:grey;
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 20px; /* Some padding */
+    border-radius: 50%; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    transition: 300ms;
+  }
+  #upScrollBtn::after{
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    content:'';
+    box-sizing:border-box;
+    box-shadow:  0 0 0 3px #fff;
+    top:0;
+    left:0;
+    opacity: 0;
+    transition: 300ms;
+  }
+  #upScrollBtn:hover {
+    // color: #151515;
+    color:white;
+    background-color: rgb(125, 38, 206); /* Add a dark-grey background on hover */
+  }
+  #upScrollBtn:hover::after{
+    opacity: 1;
+    transform: scale(1.15);
+  }
+
+@media (max-width: 1440px){
+    #upScrollBtn{
+        right: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .section {
+        padding: 0 15px 0 15px;
+    }
+}
+
+@media (max-width: 425px) {
+    .main_tittle{
+        font-size: 30px;
+    }
+    .main_tittle::before {
+        margin-right: 10px;
+    }
+    
+}
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+@import "blocks/player";
+@import "blocks/header";
+@import "blocks/video";
+@import "blocks/links";
+@import "blocks/hero";
+@import "blocks/info";
+@import "blocks/gallery";
+@import "blocks/slider";
+@import "blocks/footer";
+@import "blocks/tracks";
+
+// body{
+//     overflow-x: hidden;
+// }
+    // .links,.tracks, .info, .hero, .header, .gallery, .slider, .footer{
+    //     display: none;
+    // }
+
+
+    // section::before {
+    //     position: relative;
+    //     content: '';
+    //     display: block;
+    //     height: 50px;
+    //     top: 0;
+    //     margin: -50px 0 0;
+    // }
